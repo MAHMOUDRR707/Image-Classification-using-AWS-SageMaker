@@ -21,6 +21,9 @@ uploaded to s3://sagemaker-us-east-1-979233489196/dogImages/
 ## Hyperparameter Tuning
 What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
+ **- for HPO.PY file  used for  retrieve the best best hyperparameters from all your training jobs**
+
+
 I worked on different parameters like LR , batch_size and epochs and best of them : 
 
 LR : 0.00604276152932198
@@ -65,6 +68,9 @@ Batch_Size  : 128
 Ephocs : 3
 
 ## Debugging and Profiling
+
+ **- for train_model.py  used for makeing my debugger and profiler work. then  ran it with a new estimator and printed the results.**
+ 
 **TODO**: Give an overview of how you performed model debugging and profiling in Sagemaker
 I created a functioning model first with fine-tuned hyperparameters. Then I imported the configurations and rules required to set up the profiler and debugger. In order to test overfit and GPU utilisation, for example, I set the criteria and configurations accordingly. After that, I modified train_model.py as necessary to enable my debugger and profiler. The findings were printed after I eventually ran it with a new estimator.
 
@@ -82,6 +88,8 @@ Billable seconds: 1587
 
 Check the debugger report   :
 
+
+
 [Debugger Report](https://github.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/blob/master/profiler-debugging-report.html)
 
 ## Model Deployment
@@ -89,6 +97,8 @@ Check the debugger report   :
 
 To deploy the model, it is required to create a python file called inference.py which loads the model and transforms the input.
 
+ **-  for inference.py used for taking the content_type of "image/jpeg" as Tensor binary input and return the classification result, the other content_types are handled with an exception**
+ 
 To call the model, we have to execute the following code :
 
 ```python
