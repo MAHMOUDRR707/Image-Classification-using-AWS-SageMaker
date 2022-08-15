@@ -127,7 +127,7 @@ def main(args):
     EDIT: Create your loss and optimizer
     '''
     loss_criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.fc.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.fc.parameters(), lr=args.lr)
     
     '''
     EDIT: Call the train function to start training your model
