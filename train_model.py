@@ -49,7 +49,7 @@ def test(model, test_loader, criterion, device, hook):
             los += loss.item() * inputs.size(0) 
     total_acc = acc // len(test_loader)
     total_loss = los // len(test_loader) 
-    print('Test Accuracy:{}% \t Test Loss: {}'.format(100*total_acc,total_loss))
+    logger.info(f'Test set: Accuracy: {acc}/{len(test_loader.dataset)} = {100*total_acc}%), \tTesting Loss: {total_loss}')
     return total_acc
 
 def train(model, train_loader, validation_loader, criterion, optimizer, epochs, device, hook):
@@ -155,7 +155,7 @@ def main(args):
     EDIT: Create your loss and optimizer
     '''
     loss_criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.fc.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.fc.parameters(), lr=args.lr)
     hook.register_loss(loss_criterion)
     
     '''
@@ -192,5 +192,9 @@ if __name__=='__main__':
     parser.add_argument('--data', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
 
     args=parser.parse_args()
+    
+    logging.info(f"Learning Rate: {args.lr}")
+    logging.info(f"Batch Size: {args.batch_size}")
+    logging.info(f"Epochs: {args.epochs}")
     
     main(args)
