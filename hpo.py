@@ -39,7 +39,8 @@ def test(model, test_loader, criterion, device):
 
     total_loss = los // len(test_loader)
     total_acc = acc // len(test_loader)
-    print('Test Accuracy:{}% \t Test Loss: {}'.format(100*total_acc,total_loss))
+    print(f'Test set: Accuracy: {running_corrects}/{len(test_loader.dataset)} = {100*total_acc}%),\t Testing Loss: {total_loss}')
+
 
 def train(model, train_loader, criterion, optimizer, epochs, device):
     '''
@@ -133,9 +134,11 @@ def main(args):
     EDIT: Call the train function to start training your model
     Remember that you will need to set up a way to get training data from S3
     '''
-    logger.info("Train Model")
-
+    
+    logger.info(int(args.batch_size))
     train_loader, test_loader, validation_loader = create_data_loaders(args.data, int(args.batch_size))
+    
+    logger.info("Train Model")
     model=train(model, train_loader, loss_criterion, optimizer, args.epochs, device)
     
     '''
@@ -184,5 +187,9 @@ if __name__=='__main__':
     parser.add_argument('--data', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
 
     args=parser.parse_args()
+    
+    logging.info(f"Learning Rate: {args.lr}")
+    logging.info(f"Batch Size: {args.batch_size}")
+    logging.info(f"Epochs: {args.epochs}")
     
     main(args)
