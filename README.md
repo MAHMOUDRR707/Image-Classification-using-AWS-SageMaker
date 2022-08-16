@@ -26,9 +26,9 @@ What kind of model did you choose for this experiment and why? Give an overview 
 
 I worked on different parameters like LR , batch_size and epochs and best of them : 
 
-LR : 0.00604276152932198
+LR : 0.002340449644593647
 Batch_Size  : 128
-Ephocs : 3
+Ephocs : 5
 
 Remember that your README should:
 
@@ -50,7 +50,7 @@ metric_definitions = [{"Name": "average test accuracy", "Regex": ([0-9\\.]+)"}]
 
 - batch size with options 16,32,128
 
-- epochs with a range of 3 to 5
+- epochs with a range of 3 to 6
 
 ![Tuning jobs](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/hyper2.png)
 
@@ -61,11 +61,11 @@ metric_definitions = [{"Name": "average test accuracy", "Regex": ([0-9\\.]+)"}]
 
 best hyperparameter I got  :
 
-LR : 0.00604276152932198
+LR : 0.002340449644593647
 
 Batch_Size  : 128
 
-Ephocs : 3
+Ephocs : 5
 
 ## Debugging and Profiling
 
