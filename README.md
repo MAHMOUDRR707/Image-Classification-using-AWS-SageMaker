@@ -36,7 +36,7 @@ Remember that your README should:
 
 I start  working on 3 Trainig jobs . 
 
-![training jobs](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/trainingjob.png?token=GHSAT0AAAAAABWYDGOUV3HVU7PTK7Q2XYQEYX2AF2Q)
+![training jobs](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/training%20job.png)
 
 - Tune at least two hyperparameters
 
@@ -52,10 +52,10 @@ metric_definitions = [{"Name": "average test accuracy", "Regex": ([0-9\\.]+)"}]
 
 - epochs with a range of 3 to 5
 
-![Tuning jobs](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/hyperparameter%20tuning.png?token=GHSAT0AAAAAABWYDGOVHDUCMHDWM2M62VNQYX2AHWQ)
+![Tuning jobs](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/hyper2.png)
 
 
-![Tuning job sucess](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/hyperparameter%20tuning2.png?token=GHSAT0AAAAAABWYDGOV2FEGJSYZG4FJ5Y3CYX2AICA)
+![Tuning job sucess](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/hyper1.png)
 
 - Retrieve the best best hyperparameters from all your training jobs
 
@@ -90,7 +90,7 @@ Check the debugger report   :
 
 
 
-[Debugger Report](https://github.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/blob/master/profiler-debugging-report.html)
+[Debugger Report](https://github.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/blob/master/profiler-report.html)
 
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
@@ -112,4 +112,4 @@ response = predictor.predict(buf.getvalue())
 
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
 
-![Endpoint screenshot](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/endpoint.png?token=GHSAT0AAAAAABWYDGOUVOBAVJM42HNSA7NGYX2A2DA)
+![Endpoint screenshot](https://raw.githubusercontent.com/MAHMOUDRR707/Image-Classification-using-AWS-SageMaker/master/Screenshots/Endpoint.png)
