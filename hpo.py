@@ -68,8 +68,8 @@ def train(model, train_loader, criterion, optimizer, epochs, device):
                 _, prediction = torch.max(outputs, 1)
                 los += loss.item() * inputs.size(0)
                 acc += torch.sum(prediction == datalabels.data)
-            epoch_loss = los // len(image_dataset[phase])
-            epoch_acc = corr // len(image_dataset[phase])
+            epoch_loss = los // len(image_dataset["train"])
+            epoch_acc = acc // len(image_dataset["train"])
             logger.info("Epoch {}, loss: {}, acc: {}\n".format(epoch, epoch_loss, epoch_acc))           
     return model
     
